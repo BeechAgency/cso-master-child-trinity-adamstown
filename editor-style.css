@@ -1,0 +1,222 @@
+@import url('style.css');
+
+:root {
+    /* Colors */
+    --white : #ffffff;
+	--black : #000000;
+	--warning-light : rgba(201, 45, 45, 0.1);
+
+	--fw-regular : 400;
+	--fw-book : 400;
+	--fw-light : 200;
+	--fw-medium : 600;
+	--fw-bold : 700;
+
+    /* Font Sizes */
+	--base-font-size:
+    clamp(16px, 1.1713vw, 1.1713vw); /*  16px @ 1366px width = 1.1713vw, clamp the base font for max flex  */
+	--base-line-height : 1.375;
+
+	--fs-base :
+    var(--base-font-size); /* 16px @ 16px base */
+
+	--fs-h1: 3.052rem; /* 48px @ 16px base */
+	--fs-h2 : 2.441rem; /* 39px @ 16px base */
+	--fs-h3 : 1.953rem; /* 31px @ 16px base */
+	--fs-h4 : 1.563rem; /* 20px @ 16px base */
+	--fs-h5 : 1.25rem; /* 13px @ 16px base */
+	--fs-h6 : 1rem; /* 16px @ 16px base */
+	--fs-s1 : 0.8rem; /* 13px @ 16px base */
+	--fs-s2 : 0.64rem; /* 12px @ 16px base */
+
+	/* Default */
+	--body-text-color: var(--black, #000000);
+	--body-bg-color: var(--white, #ffffff);
+
+	/* Width */
+	--max-width : 78rem;
+}
+
+html, body {
+    padding: 5px;
+}
+
+html, body {
+    font-family: var(--ff-body);
+    font-size: var(--base-font-size);
+    color: var(--body-text-color);
+    text-rendering: geometricPrecision;
+    font-weight: var(--fw-book);
+    line-height: var(--base-line-height);
+    /* font-variant-ligatures: common-ligatures; */
+    min-height: 100%;
+}
+body {
+	/* transition: all 150ms ease; */
+	background-color: var(--white);
+}
+* {
+	box-sizing: border-box;
+}
+
+.breadcrumbs-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    /* gap: 1rem; */
+}
+.breadcrumbs-list li:nth-child(1), .breadcrumbs-list li:nth-child(2) {
+	line-break: normal;
+	white-space: nowrap;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+/*
+ * TYPE!
+ */
+h1,h2,h3,h4,h5,h6,p {
+	margin-top: 0;
+	margin-bottom: 0em;
+}
+h1,h2,h4,h5 { font-family: var(--ff-serif); font-weight: var(--fw-regular); }
+h3,h6 { font-family: var(--ff-sans); font-weight: var(--fw-regular); }
+
+h1 {
+	font-size: var(--fs-h1);
+	margin-bottom: 2.1rem;
+	line-height: 1;
+}
+h2 {
+	font-size: var(--fs-h2);
+	line-height: 1;
+	margin-bottom: 0.5em;
+	font-weight: var(--fw-light);
+}
+h3 {
+	font-size: var(--fs-h3);
+	line-height: 1.1;
+	margin-bottom: 0.5em;
+}
+h4 {
+	font-size: var(--fs-h4);
+	margin-bottom: 0.5em;
+	line-height: 1.1;
+}
+h5 {
+	font-size: var(--fs-h5);
+	margin-bottom: 0.5em;
+	line-height: 1.1;
+}
+h6 {
+	font-size: var(--fs-h6);
+	line-height: 1.1;
+}
+p {
+	font-size: var(--fs-base);
+	line-height: var(--base-line-height);
+	margin-bottom: 1rem;
+	overflow: auto;
+}
+p.small, .small {
+	font-size: var(--fs-s1);
+}
+p:empty {
+	margin-bottom: 0;
+}
+.smaller {
+	font-size: var(--fs-s2);
+}
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: opacity 150ms ease;
+	opacity: 1;
+	cursor: pointer;
+}
+a:not(.btn):hover {
+	opacity: 0.7;
+}
+.sans { font-family: var(--ff-sans); }
+.serif { font-family: var(--ff-serif); }
+
+.btn {
+	background-color: var(--base-background-color, transparent);
+	color: var(--text-color);
+	border: 1px solid var(--text-color);
+	padding-inline: 2rem;
+	padding-block: 0.5rem;
+	border-radius: 2rem;
+	display: inline-block;
+	transition: all 150ms ease;
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+}
+.btn:hover {
+	background-color: var(--text-color);
+	color: var(--base-background-color, white);
+	/* box-shadow: 0px 0px 13px -5px var(--text-color, black); */
+}
+.btn.btn-secondary {
+	color: var(--base-background-color, white);
+	background-color: var(--text-color);
+}
+
+.btn.btn-secondary:hover {
+    background-color: var(--base-background-color, white);
+    color: var(--text-color);
+}
+.btn-align-center { text-align: center; }
+.btn-align-left { text-align: left; }
+.btn-align-right { text-align: right; }
+
+.btn.align-center {
+	margin-inline: auto;
+}
+.btn + .btn {
+	margin-left: 1rem;
+}
+.btn:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+figure {
+	margin: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+/*
+p > img {
+    margin-bottom: 1rem;
+}*/
+
+img.aligncenter {
+    margin-inline: auto;
+    margin-bottom: 1rem;
+}
+
+img.alignright {
+    float: right;
+    display: inline;
+    margin-left: 1rem;
+}
+
+img.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1rem;
+}
+
+img[src*=".svg"] {
+	width: 100%;
+	height: auto;
+}

@@ -1,0 +1,253 @@
+/*!
+Theme Name: Trinity College, Adamstown - CSOMN Theme
+Theme URI: https://beech.agency/
+Author: Beech Agency
+Author URI: https://beech.agency/
+
+Template: cso-master
+
+Description: A theme for Trinity College, Adamstown
+Version: 0.1
+Tested up to: 6.4
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: csomasterchild
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+csomaster is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+*/
+
+/* --------------------------------------------------------------*/
+:root {
+	--primary-dark : #002a4e;
+	--primary-light : #c0e9fd;
+	--secondary-dark : #c7994a;
+	--secondary-light : #c52233;
+	--warning : #E31E39;
+	--success : #2DC98D;
+
+	--ff-century-gothic : Century Gothic,CenturyGothic,AppleGothic,Helvetica, Arial, sans-serif;
+	--ff-helvetica : "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	--ff-serif: var(--ff-century-gothic);
+	--ff-sans: var(--ff-century-gothic);
+	--ff-headings: var(--ff-century-gothic);
+	--ff-body: var(--ff-helvetica);
+}
+
+h1, h2, h3, h4,h5 {
+	font-weight: 500;
+	font-family: var(--ff-headings);
+}
+
+.block.has-school-style::after {
+	content: '';
+	background-image:  url('./images/school-style.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top center;
+	height: calc(100% - 4rem);
+    width: auto;
+    right: -9vw;
+    top: 2rem;
+    opacity: 0.4;
+
+	aspect-ratio: 36 / 39;
+}
+
+.block.has-school-style.has-secondary-dark-background-color::after,
+.block.has-school-style.has-primary-light-background-color::after {
+	filter: brightness(100);
+}
+
+.block.text-block__quote.quote-left.has-school-style::after {
+	width: 25vw;
+	top: 3vh;
+	right: 12vw;
+}
+.block.text-block__quote.quote-right.has-school-style::after {
+	right: auto;
+	left: 5vw;
+	top: 50%;
+	transform: translate(0%, -50%);
+	widtH: 40vw;
+	height: auto;
+    opacity: 0.4;
+}
+.block.text-block__quote.quote-center.has-school-style::after {
+	right: 50%;
+	top: 50%;
+	transform: translate(50%, -50%);
+	width: 70vw;
+	height: auto;
+}
+
+
+.block.cards-block__article-list.has-white-background-color::after,
+.block.cards-block__image-cards.style-icon-only.has-white-background-color::after {
+	position: absolute;
+	content: '';
+	background-image:  url('./images/school-style.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top center;
+	height: auto;
+    opacity: 0.4;
+
+	aspect-ratio: 36 / 39;
+	z-index: 0;
+}
+.block.cards-block__article-list.has-white-background-color::after {
+    width: 30vw;
+    left: 2rem;
+    bottom: 1rem;
+}
+.block.cards-block__image-cards.style-icon-only.has-white-background-color > .xy-grid {
+	z-index: 1;
+	position: relative;
+}
+.block.cards-block__image-cards.style-icon-only.has-white-background-color::after {
+    width: 20vw;
+    top: 4vh;
+    right: 1rem;
+}
+
+
+
+nav img.logo, aside img.logo, .site-search-outer img.logo {
+	width: auto;
+	max-height: 10.5rem;
+
+	position: absolute;
+}
+a:has(.logo):hover {
+	opacity: 1;
+}
+
+.nav-header-primary, .nav-header-utility {
+	padding-top: 0;
+}
+.mega-menu-header { height: auto;}
+.mega-menu-header img.logo {
+	background-color: var(--base-background-color);
+	z-index: 2;
+}
+.open .mega-menu-header:after {
+	margin-left: 15rem;
+	width: calc(100% - 15rem);
+}
+.mega-menu-header {
+	margin-bottom: 7rem;
+}
+
+nav img.logo, aside img.logo {
+	transform: translate(0, 0rem);
+}
+
+nav.header-alternative img.logo {
+	margin-top: -2rem;
+    transform: translate(0, 1rem);
+}
+nav.header-auxiliary-nav + aside.mega-menu-wrapper.open .logo {
+	margin-top: -1rem;
+}
+
+footer .has-secondary-dark-background-color {
+	--text-color: var(--white);
+	color: var(--white);
+}
+.header-auxiliary-nav p {
+	color: var(--primary-light);
+	opacity: 0.8;
+}
+footer .footer-logo img {
+	max-width: 7rem;
+}
+
+
+@media screen and (max-width: 1120px ) {
+	.block.text-block__quote.quote-left.has-school-style::after {
+		width: auto;
+		height: calc(100% - 4rem);
+		top: 2rem;
+
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.nav-header-utility li:not(.menu-item-btn) {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 860px) { 
+	nav img.logo, aside img.logo {
+		transform: translate(0, -1rem);
+	}
+}
+
+@media screen and (max-width: 479px) {
+	nav img.logo, aside img.logo, .site-search-outer img.logo {
+		position: inherit;
+	}
+	.open .mega-menu-header:after {
+		margin-left: 0;
+		width: 100%;
+	}
+	nav.header-alternative img.logo {
+		margin-top: 0;
+		transform: translate(0,0);
+	}
+	nav.header-auxiliary-nav + aside.mega-menu-wrapper.open .logo {
+		margin-top: 0;
+	}
+
+	.block.text-block__text.has-school-style::after {
+		width: 60vw;
+		top: 1rem;
+		opacity: 0.1;
+	}
+	.block.text-block__quote.quote-left.has-school-style::after {
+		width: 40vw;
+	}
+	.block.text-block__quote.quote-right.has-school-style::after {
+		width: 60vw;
+		right: -10vw;
+		left: auto;
+	}
+	.block.text-block__quote.quote-center.has-school-style::after {
+		width: 80vw;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.header-primary-nav .nav-inner {
+		flex-direction: column;
+		row-gap: 0;
+	}
+	.header-primary-nav .nav-inner  .xy-col[data-xy-col*="sm-6"] {
+		flex-basis: 100%;
+		width: 100%;
+		justify-content: center;
+	}
+	.header-primary-nav .nav-inner img.logo {
+		margin-inline: auto;
+	}
+	.header-primary-nav .nav-header-utility ul {
+		justify-content: center;
+	}
+	.mega-menu-header .btn-search {
+		display: none;
+	}
+
+	.site-search-nav {
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+}
