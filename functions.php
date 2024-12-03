@@ -1,6 +1,6 @@
 <?php 
 
-$GLOBALS['THEME_NAME'] = 'cso-master-child-st-catherines-singleton';
+$GLOBALS['THEME_NAME'] = 'cso-master-child-trinity-college-adamstown';
 $GLOBALS['CHILD_THEME_COLORS'] = array(
 	'white' => 'ffffff',
 	'black' => '000000',
