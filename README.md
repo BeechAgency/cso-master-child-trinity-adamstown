@@ -1,7 +1,7 @@
-St Catherine's Catholic College, Singleton Theme
+Trinity College, Adamstown Theme
 ===
 
-CSO Master child theme for St Catherine's Catholic College, Singleton. Changes the fonts, colours and school style of the site to be in line with the St Catherine's brand.
+CSO Master child theme for Trinity College, Adamstown. Changes the fonts, colours and school style of the site to be in line with the Trinity's brand.
 
 About
 ---------------
