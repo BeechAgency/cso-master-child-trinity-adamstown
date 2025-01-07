@@ -7,7 +7,7 @@ Author URI: https://beech.agency/
 Template: cso-master
 
 Description: A theme for Trinity College, Adamstown
-Version: 0.1
+Version: 1.0
 Tested up to: 6.4
 Requires PHP: 8.1
 License: GNU General Public License v2 or later
@@ -26,7 +26,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /* --------------------------------------------------------------*/
 :root {
 	--primary-dark : #002a4e;
-	--primary-light : #c0e9fd;
+	--primary-light : #D9DAE4;
 	--secondary-dark : #c7994a;
 	--secondary-light : #c52233;
 	--warning : #E31E39;
@@ -123,14 +123,19 @@ h1, h2, h3, h4,h5 {
 	aspect-ratio: 36 / 39;
 	z-index: 0;
 }
+
 .block.cards-block__article-list.has-white-background-color::after {
     width: 30vw;
     left: 2rem;
     bottom: 1rem;
 }
-.block.cards-block__image-cards.style-icon-only.has-white-background-color > .xy-grid {
+
+.block.cards-block__article-list.has-white-background-color,
+.block.cards-block__image-cards.style-icon-only.has-white-background-color {
 	z-index: 1;
 	position: relative;
+	
+	.xy-grid { position: relative; z-index: 1;}
 }
 .block.cards-block__image-cards.style-icon-only.has-white-background-color::after {
     width: 20vw;
@@ -190,6 +195,10 @@ footer .footer-logo img {
 	max-width: 7rem;
 }
 
+.has-secondary-light-background-color {
+	color: var(--white);
+	--text-color: var(--white);
+}
 
 @media screen and (max-width: 1120px ) {
 	.block.text-block__quote.quote-left.has-school-style::after {
