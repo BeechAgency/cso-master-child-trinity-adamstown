@@ -1,25 +1,51 @@
-Trinity College, Adamstown Theme
-===
+# Trinity College, Adamstown Child Theme
 
-CSO Master child theme for Trinity College, Adamstown. Changes the fonts, colours and school style of the site to be in line with the Trinity's brand.
+This is the child theme for Trinity College, Adamstown, built on top of the [CSO Master Theme](https://github.com/BeechAgency/cso-master). It customizes the visual identity of the school website while leveraging the core functionality of the diocesan master theme.
 
-About
----------------
+---
 
-This theme comes packed with a variety of block layouts, headers, posts and pages, and no other custom post types out of the box. 
+## ✨ Additional Functionality
 
-### Requirements
+This child theme extends the master theme by applying the school's unique branding:
 
-- PHP8.1
-- CSO Master Theme (minimum version 1.0)
-- Advanced Custom Fields (Plugin)
-- Gravity Forms (Plugin)
-- Clasic Editor
+- **Custom Typography**: Tailored font selections to match the Trinity College identity.
+- **Brand Color Palette**: Implements specific brand colors (Primary Dark, Primary Light, Secondary Dark, etc.) for use in blocks and components.
+- **School Styling**: Customized Gutenberg block styles, including the `has-school-style` modifier for distinct content sections.
 
-### Updates
+---
 
-Theme updates are deployed via GitHub releases, making it easy to stay up-to-date with the latest version. 
+## 🔄 Theme Updater
 
-#### Note on updates
+The child theme features an automated updater that connects to GitHub, allowing for seamless updates directly through the WordPress dashboard.
 
-Current there is a problem with the updater. Activate the main CSO theme before updating and the update will work fine otherwise refresh the update page post-update and reactivate the child theme. This has to do with renaming of folders during the update process.
+### Configuration
+The updater matches the local version in `style.css` against the latest release on GitHub:
+- **Repository**: `cso-master-child-trinity-adamstown`
+- **Username**: `BeechAgency`
+
+---
+
+## 🛠 How to Create a New Version (Git Release)
+
+To deploy updates to the child theme, follow these steps:
+
+1. **Update Version**: Open `style.css` and increment the `Version:` header (e.g., `1.0.1`).
+2. **Commit & Push**:
+   ```bash
+   git add style.css
+   git commit -m "Bump version to 1.0.1"
+   git push origin master
+   ```
+3. **Create Git Tag**: Create a tag that matches the version number exactly.
+   ```bash
+   git tag 1.0.1
+   git push origin 1.0.1
+   ```
+4. **GitHub Release**: 
+   - Go to the [GitHub Repository](https://github.com/BeechAgency/cso-master-child-trinity-adamstown/releases).
+   - Draft a new release using the tag you just pushed.
+   - Title the release the same as the version.
+
+---
+
+*Maintained by Beech Agency*
