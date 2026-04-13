@@ -1,0 +1,29 @@
+name: Package WordPress Theme
+
+on:
+  push:
+    tags:
+      - '*'  # Triggers on all tag pushes (e.g. v1.0.0)
+
+jobs:
+  build-and-release:
+    name: Zip and upload theme
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Prepare clean zip folder
+        run: |
+          mkdir cso-master-child-trinity-adamstown
+          shopt -s extglob
+          cp -r !(cso-master-child-trinity-adamstown|.git|.github) cso-master-child-trinity-adamstown/
+          zip -r cso-master-child-trinity-adamstown.zip cso-master-child-trinity-adamstown
+
+      - name: Create Release and Upload Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: cso-master-child-trinity-adamstown.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
