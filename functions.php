@@ -259,16 +259,3 @@ $updater->set_repository( $GLOBALS['THEME_NAME'] );
 $updater->set_theme($GLOBALS['THEME_NAME']); 
 
 $updater->initialize();
-
-function console_log($output, $with_script_tags = true) {
-    $js_code = 'console.log("DEBUG ON"); console.log(' . json_encode($output, JSON_HEX_TAG) . 
-');';
-    if ($with_script_tags) {
-        $js_code = '<script type="text/javascript" id="debugging">' . $js_code . '</script>';
-    }
-    echo $js_code;
-}
-
-//console_log($updater->log, true);
-
-do_action('admin_footer', 'console_log');
