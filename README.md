@@ -4,6 +4,11 @@ This is the child theme for Trinity College, Adamstown, built on top of the [CSO
 
 ---
 
+## IMPORTANT
+
+As a new developer (October 2026) I wasn't sure what changes had happened with this site. I went to make changes to this repo and found that the live site was on version 0.3 which is missing a lot from this repo. I have kept the repo intact (in case there's important updates that will be needed later - I don't have time to check it) and made the fix to the live site by just updating the theme in appearance -> theme editor. Don't deploy this repo without testing the entire site or checking against existing theme on the live site.
+
+
 ## ✨ Additional Functionality
 
 This child theme extends the master theme by applying the school's unique branding:
